@@ -6,7 +6,6 @@ const Filter = (props) => {
   const handleFilterChange = event => {
     const filter = event.target.value 
     props.addFilter(filter)
-    // props.store.dispatch(addFilter(filter))
   }
 
   const style = {
@@ -25,6 +24,3 @@ const mapDispatchToProps = {
 }
 
 export default connect(null, mapDispatchToProps)(Filter)
-// const ConnectedFilter = connect(null, mapDispatchToProps)(Filter)
-
-// export default ConnectedFilter

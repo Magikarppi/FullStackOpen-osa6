@@ -1,23 +1,21 @@
-import axios from 'axios'
+import axios from 'axios';
 
-const baseUrl = 'http://localhost:3001/anecdotes'
+const baseUrl = 'http://localhost:3001/anecdotes';
 
 const getAll = async () => {
-  const response = await axios.get(baseUrl)
-  return response.data
-}
+  const response = await axios.get(baseUrl);
+  return response.data;
+};
 
 const createNew = async (content) => {
-  const obj =  { content, votes: 0 }
-  console.log('content in createNew', content)
-  const response = await axios.post(baseUrl, obj)
-  console.log('response.data', response.data)
-  return response.data
-}
+  const obj = { content, votes: 0 };
+  const response = await axios.post(baseUrl, obj);
+  return response.data;
+};
 
 const vote = async (anecdote) => {
-  const response = await axios.put(`${baseUrl}/${anecdote.id}`, anecdote)
-  return response.data
-}
+  const response = await axios.put(`${baseUrl}/${anecdote.id}`, anecdote);
+  return response.data;
+};
 
-export default { getAll, createNew, vote }
+export default { getAll, createNew, vote };
